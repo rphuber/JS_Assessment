@@ -11,7 +11,7 @@ exports.arraysAnswers = {
   },
 
   remove : function(arr, item) {
-    return arr.filter(e => e !== item)
+    return arr.filter(element => element !== item)
   },
 
   removeWithoutCopy : function(arr, item) {
@@ -23,21 +23,29 @@ exports.arraysAnswers = {
   },
 
   append : function(arr, item) {
+    // es2015 (no mutation)
+    // return [...arr, item]
     arr.push(item)
     return arr
   },
 
   truncate : function(arr) {
+    // no mutation
+    // return arr.slice(0, arr.length - 1)
     arr.pop()
     return arr
   },
 
   prepend : function(arr, item) {
+    //  es2015 (no mutation)
+    // return [item, ...arr]
     arr.unshift(item)
     return arr
   },
 
   curtail : function(arr) {
+    // no mutation
+    // return arr.slice(1)
     arr.shift()
     return arr
   },
